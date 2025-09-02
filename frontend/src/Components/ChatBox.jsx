@@ -36,5 +36,11 @@ useEffect(()=>{
     if(!targetUserId)return;
     setMessages([]);
 
+    socket.emit('register',{
+        userId,
+        isAdmin,
+        currentChatUserId:isAdmin? currentChatUserId:null
+    })
+
 },[])
 
